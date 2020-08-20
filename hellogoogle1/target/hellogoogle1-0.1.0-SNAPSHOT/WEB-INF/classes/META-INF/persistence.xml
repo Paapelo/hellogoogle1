@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="hellogoogle1">
+<!-- 		<class>data.Riista</class>
+	 -->	
+		
+<!--  Tietokantayhteyden tunnus ja salasana. Ja taulu luodaan, ellei jo ole.--> 
+    <properties>
+    <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+    <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hellogoogle1" />
+    <property name="javax.persistence.jdbc.user" value="pena" />
+    <property name="javax.persistence.jdbc.password" value="kukkuu" />
+
+<!--  
+    <property name="cloudsql.url.dev" value="jdbc:mysql://localhost:3306/kalat?user=pena&amp;password=kukkuu" />
+      <property name="eclipselink.ddl-generation" value="create-tables" />
+-->
+	</properties>
+	
+			
+	</persistence-unit>
+
+	<persistence-unit name="hellogoogle1production">
+		<class>data.Riista</class>
+		
+		
+<!--  Tietokantayhteyden tunnus ja salasana. Ja taulu luodaan, ellei jo ole.--> 
+    <properties>
+    <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+    <property name="cloudsql.url" value="jdbc:mysql://google/hellogoogle1?cloudSqlInstance=ace-beanbag-239715:europe-west1:hellogoogle1mysql;socketFactory=com.google.cloud.sql.mysql.SocketFactory;useSSL=false" />
+    <property name="javax.persistence.jdbc.user" value="root" />
+    <property name="javax.persistence.jdbc.password" value="kukkuu" />
+
+<!--  
+    <property name="cloudsql.url.dev" value="jdbc:mysql://localhost:3306/kalat?user=pena&amp;password=kukkuu" />
+      <property name="eclipselink.ddl-generation" value="create-tables" />
+-->
+	</properties>
+	
+			
+	</persistence-unit>
+<!-- 	
+jdbc:mysql://google/<DATABASE_NAME>?cloudSqlInstance=<INSTANCE_CONNECTION_NAME>&socketFactory=com.google.cloud.sql.mysql.SocketFactory&user=<MYSQL_USER_NAME>&password=<MYSQL_USER_PASSWORD>&useSSL=false	
+ -->	
+</persistence>
